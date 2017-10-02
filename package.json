@@ -1,0 +1,21 @@
+{
+  "name": "geektool-rain",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "npm run test -- --watch"
+  },
+  "keywords": [],
+  "author": "Philipp Bock <p@philippbock.de> (http://philippbock.de/)",
+  "license": "MIT",
+  "dependencies": {
+    "isomorphic-fetch": "^2.2.1",
+    "xml-js": "^1.5.0"
+  },
+  "devDependencies": {
+    "jest": "^21.2.1",
+    "standard": "^10.0.3"
+  }
+}
