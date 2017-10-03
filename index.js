@@ -16,5 +16,6 @@ const title = args[2] || `${latitude}, ${longitude}`
 
 nowcast({ latitude, longitude })
 .then(data => {
-  console.log(plot({ data: data.forecasts.map(f => f.precipitation), title }))
+  if (process.env.DEBUG) console.error(data)
+  else console.log(plot({ data: data.forecasts.map(f => f.precipitation), title, startTime: data.forecasts[0].time }))
 })
