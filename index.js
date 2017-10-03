@@ -1,24 +1,20 @@
 'use strict'
 
 const nowcast = require('./lib/nowcast')
+const plot = require('./lib/plot')
 
-// const location = require('@derhuerst/location')
-// location((err, loc) => {
-//   if (err) return console.error(err)
-//   nowcast(loc).then(l => console.log(plot(l)))
-// })
+const args = process.argv.slice(2)
 
-Promise.all([
-  nowcast([ 5.353524, 60.316782 ]),
-  nowcast([ 5.326066, 60.391028 ]),
-  nowcast([ 10.756228, 59.911398 ])
-])
-.then(places => {
-  console.log(places.map(plot).join('\n'))
-})
-
-function plot ({ forecasts }) {
-  return forecasts
-    .map(r => r.precipitation)
-    .join(', ')
+if (args.length < 2) {
+  console.error(`Usage: ${process.argv.slice(0, 2).join(' ')} <latitude> <longitude> [label]`)
+  process.exit(1)
 }
+
+const latitude = +args[0]
+const longitude = +args[1]
+const title = args[2] || `${latitude}, ${longitude}`
+
+nowcast({ latitude, longitude })
+.then(data => {
+  console.log(plot({ data: data.forecasts.map(f => f.precipitation), title }))
+})
