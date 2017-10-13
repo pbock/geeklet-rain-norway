@@ -12,9 +12,13 @@
   "license": "MIT",
   "dependencies": {
     "d3": "^4.10.2",
+    "inquirer": "^3.3.0",
     "isomorphic-fetch": "^2.2.1",
+    "opn": "^5.1.0",
     "react": "^16.0.0",
-    "react-dom": "^16.0.0"
+    "react-dom": "^16.0.0",
+    "tmp": "^0.0.33",
+    "xml-js": "^1.5.1"
   },
   "devDependencies": {
     "jest": "^21.2.1",
