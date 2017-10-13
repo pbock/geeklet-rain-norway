@@ -1,13 +1,14 @@
 {
-  "name": "geektool-rain",
+  "name": "geeklet-rain-norway",
   "version": "0.1.0",
-  "description": "",
+  "description": "Rain forecasts for Norway on your Mac desktop",
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "test:watch": "npm run test -- --watch"
+    "test:watch": "npm run test -- --watch",
+    "setup": "node setup.js"
   },
-  "keywords": [],
+  "keywords": [ "norway", "rain", "desktop", "geektool", "geeklet", "forecast", "weather" ],
   "author": "Philipp Bock <p@philippbock.de> (http://philippbock.de/)",
   "license": "MIT",
   "dependencies": {
@@ -23,5 +24,8 @@
   "devDependencies": {
     "jest": "^21.2.1",
     "standard": "^10.0.3"
+  },
+  "bin": {
+    "geeklet-rain-norway": "./setup.js"
   }
 }
